@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Hitler</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+height:100vh;
+overflow:hidden;
+background:linear-gradient(135deg,#ff758c,#ff7eb3,#84fab0,#8fd3f4);
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+position:relative;
+}
+
+/* Birthday Text */
+
+h1{
+font-size:4rem;
+text-align:center;
+animation:glow 2s infinite alternate;
+background:linear-gradient(
+90deg,
+red,
+orange,
+yellow,
+green,
+blue,
+indigo,
+violet
+);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+font-weight:bold;
+z-index:2;
+}
+
+@keyframes glow{
+from{
+transform:scale(1);
+}
+to{
+transform:scale(1.08);
+}
+}
+
+/* Surprise Button */
+
+.surprise-btn{
+margin-top:40px;
+padding:18px 45px;
+background:#007BFF;
+color:white;
+font-size:24px;
+font-weight:bold;
+border:none;
+border-radius:50px;
+cursor:pointer;
+transition:0.4s;
+box-shadow:0 0 25px rgba(0,123,255,.6);
+z-index:2;
+}
+
+.surprise-btn:hover{
+transform:scale(1.1);
+}
+
+/* Balloons */
+
+.balloon{
+position:absolute;
+width:80px;
+height:100px;
+border-radius:50%;
+animation:float 10s infinite linear;
+}
+
+.balloon::after{
+content:'';
+position:absolute;
+width:2px;
+height:80px;
+background:white;
+left:50%;
+top:100px;
+}
+
+.red{
+background:red;
+left:5%;
+}
+
+.blue{
+background:blue;
+left:10%;
+animation-delay:2s;
+}
+
+.green{
+background:green;
+right:10%;
+animation-delay:1s;
+}
+
+.yellow{
+background:yellow;
+right:5%;
+animation-delay:3s;
+}
+
+@keyframes float{
+0%{
+bottom:-150px;
+}
+100%{
+bottom:110%;
+}
+}
+
+/* Fireworks */
+
+.firework{
+position:absolute;
+width:8px;
+height:8px;
+border-radius:50%;
+background:white;
+animation:explode 2s infinite;
+}
+
+.firework:nth-child(1){
+top:20%;
+left:20%;
+background:red;
+}
+
+.firework:nth-child(2){
+top:30%;
+right:20%;
+background:yellow;
+animation-delay:1s;
+}
+
+.firework:nth-child(3){
+top:60%;
+left:25%;
+background:cyan;
+animation-delay:0.5s;
+}
+
+.firework:nth-child(4){
+top:70%;
+right:25%;
+background:lime;
+animation-delay:1.5s;
+}
+
+@keyframes explode{
+0%{
+transform:scale(0);
+opacity:1;
+}
+100%{
+transform:scale(12);
+opacity:0;
+}
+}
+
+.subtitle{
+margin-top:15px;
+font-size:24px;
+font-weight:bold;
+color:white;
+z-index:2;
+text-shadow:2px 2px 10px black;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- Music -->
+<audio autoplay loop>
+<source src="music/birthday-message.mp3" type="audio/mp3">
+</audio>
+
+<!-- Fireworks -->
+<div class="firework"></div>
+<div class="firework"></div>
+<div class="firework"></div>
+<div class="firework"></div>
+
+<!-- Balloons -->
+<div class="balloon red"></div>
+<div class="balloon blue"></div>
+<div class="balloon green"></div>
+<div class="balloon yellow"></div>
+
+<!-- Main Content -->
+
+<h1>
+🎉 HAPPY BIRTHDAY HITLER 🎉
+</h1>
+
+<div class="subtitle">
+A Special Surprise Is Waiting For You ❤️
+</div>
+
+<button class="surprise-btn"
+onclick="window.location.href='cake.html'">
+SURPRISE 💙
+</button>
+
+</body>
+</html>
