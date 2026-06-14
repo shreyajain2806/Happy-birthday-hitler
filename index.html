@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Special Surprise</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#ffd6e8,#f3d7ff);
+    overflow:hidden;
+}
+
+.card{
+    width:90%;
+    max-width:650px;
+    background:rgba(255,255,255,0.35);
+    backdrop-filter:blur(8px);
+    border-radius:35px;
+    padding:40px 25px;
+    text-align:center;
+    box-shadow:0 15px 40px rgba(0,0,0,0.12);
+}
+
+.penguin{
+    width:220px;
+    margin-bottom:20px;
+}
+
+.title{
+    font-family:'Dancing Script',cursive;
+    font-size:3rem;
+    color:#c0005d;
+    margin-bottom:25px;
+}
+
+.hearts{
+    font-size:45px;
+    margin-bottom:35px;
+}
+
+.start-btn{
+    text-decoration:none;
+    display:inline-block;
+    padding:18px 60px;
+    border-radius:50px;
+    font-size:1.5rem;
+    color:white;
+    font-weight:600;
+    background:linear-gradient(to right,#ff2d75,#ff008c);
+    box-shadow:0 10px 25px rgba(255,0,128,.35);
+    transition:0.3s;
+}
+
+.start-btn:hover{
+    transform:translateY(-4px) scale(1.03);
+}
+
+.floating{
+    position:absolute;
+    color:#ff9dc7;
+    animation:float 6s linear infinite;
+}
+
+@keyframes float{
+    from{
+        transform:translateY(100vh);
+        opacity:0;
+    }
+    to{
+        transform:translateY(-100px);
+        opacity:1;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="floating" style="left:10%;font-size:25px;">❤</div>
+<div class="floating" style="left:25%;font-size:20px;animation-delay:2s;">❤</div>
+<div class="floating" style="left:70%;font-size:30px;animation-delay:1s;">❤</div>
+<div class="floating" style="left:85%;font-size:22px;animation-delay:3s;">❤</div>
+
+<div class="card">
+
+    <!-- Replace with your penguin image -->
+    <img src="penguin.png" class="penguin">
+
+    <h1 class="title">A Special Surprise Awaits!</h1>
+
+    <div class="hearts">❤️❤️</div>
+
+    <a href="page2.html" class="start-btn">
+        Start Surprise 🎁
+    </a>
+
+</div>
+
+</body>
+</html>
