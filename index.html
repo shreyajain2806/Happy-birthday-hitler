@@ -21,14 +21,15 @@ body{
     display:flex;
     justify-content:center;
     align-items:center;
-    background:linear-gradient(135deg,#ffd8e6,#efd8ff);
+    background:linear-gradient(135deg,#DFF6FF,#B8E8FC);
     padding:20px;
 }
 
 .card{
     width:100%;
     max-width:650px;
-    background:rgba(255,255,255,0.35);
+    background:rgba(255,255,255,0.45);
+    backdrop-filter:blur(10px);
     border-radius:35px;
     padding:40px 20px;
     text-align:center;
@@ -44,7 +45,7 @@ body{
 .title{
     font-family:'Dancing Script',cursive;
     font-size:2rem;
-    color:#b0005c;
+    color:#2563EB;
     margin-bottom:20px;
     white-space:nowrap;
 }
@@ -59,11 +60,16 @@ body{
     text-decoration:none;
     padding:18px 60px;
     border-radius:50px;
-    background:linear-gradient(to right,#ff2e79,#ff008c);
+    background:linear-gradient(to right,#60A5FA,#2563EB);
     color:white;
     font-size:1.3rem;
     font-weight:600;
-    box-shadow:0 8px 20px rgba(255,0,128,0.3);
+    box-shadow:0 8px 20px rgba(37,99,235,0.3);
+    transition:0.3s;
+}
+
+.button:hover{
+    transform:translateY(-3px);
 }
 
 </style>
