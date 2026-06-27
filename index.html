@@ -3,93 +3,361 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Birthday Surprise</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Allura&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
 
 <style>
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
 body{
-    font-family:'Poppins',sans-serif;
-    min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    background:linear-gradient(135deg,#DFF6FF,#B8E8FC);
-    padding:20px;
+
+height:100vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+font-family:'Poppins',sans-serif;
+
+overflow:hidden;
+
+background:
+linear-gradient(135deg,#F9FCFF,#EEF7FF,#FFFFFF);
+
+position:relative;
+
+}
+
+/* Floating Glow */
+
+body::before{
+
+content:"";
+
+position:absolute;
+
+width:450px;
+
+height:450px;
+
+background:#DCEEFF;
+
+border-radius:50%;
+
+filter:blur(120px);
+
+top:-120px;
+
+left:-100px;
+
+opacity:.7;
+
+}
+
+body::after{
+
+content:"";
+
+position:absolute;
+
+width:350px;
+
+height:350px;
+
+background:#E9F5FF;
+
+border-radius:50%;
+
+filter:blur(120px);
+
+bottom:-100px;
+
+right:-100px;
+
+opacity:.8;
+
+}
+
+.sparkle{
+
+position:absolute;
+
+width:4px;
+
+height:4px;
+
+background:white;
+
+border-radius:50%;
+
+box-shadow:0 0 12px white;
+
+animation:float 6s infinite ease-in-out;
+
+}
+
+@keyframes float{
+
+0%{
+
+transform:translateY(0px);
+
+opacity:.2;
+
+}
+
+50%{
+
+transform:translateY(-25px);
+
+opacity:1;
+
+}
+
+100%{
+
+transform:translateY(0px);
+
+opacity:.2;
+
+}
+
 }
 
 .card{
-    width:100%;
-    max-width:650px;
-    background:rgba(255,255,255,0.45);
-    backdrop-filter:blur(10px);
-    border-radius:35px;
-    padding:40px 20px;
-    text-align:center;
-    box-shadow:0 10px 30px rgba(0,0,0,0.12);
+
+position:relative;
+
+z-index:2;
+
+width:90%;
+
+max-width:700px;
+
+background:rgba(255,255,255,.55);
+
+backdrop-filter:blur(18px);
+
+border-radius:35px;
+
+padding:45px;
+
+box-shadow:
+
+0 25px 60px rgba(0,0,0,.08);
+
+text-align:center;
+
 }
 
 .penguin{
-    width:220px;
-    max-width:80%;
-    margin-bottom:20px;
+
+width:180px;
+
+margin:auto;
+
+display:block;
+
+animation:updown 4s infinite;
+
 }
 
-.title{
-    font-family:'Dancing Script',cursive;
-    font-size:2rem;
-    color:#2563EB;
-    margin-bottom:20px;
-    white-space:nowrap;
+@keyframes updown{
+
+50%{
+
+transform:translateY(-8px);
+
 }
 
-.hearts{
-    font-size:40px;
-    margin-bottom:30px;
 }
 
+.small{
+
+font-family:'Allura',cursive;
+
+font-size:38px;
+
+color:#3E6BA5;
+
+margin-top:15px;
+
+}
+
+.big{
+
+font-family:'Playfair Display',serif;
+
+font-size:45px;
+
+color:#23476A;
+
+margin-top:10px;
+
+}
+
+.desc{
+
+margin-top:18px;
+
+font-size:15px;
+
+color:#5F6F81;
+
+line-height:1.8;
+
+max-width:420px;
+
+margin-left:auto;
+
+margin-right:auto;
+
+}
 .button{
-    display:inline-block;
-    text-decoration:none;
-    padding:18px 60px;
-    border-radius:50px;
-    background:linear-gradient(to right,#60A5FA,#2563EB);
-    color:white;
-    font-size:1.3rem;
-    font-weight:600;
-    box-shadow:0 8px 20px rgba(37,99,235,0.3);
-    transition:0.3s;
+
+display:inline-flex;
+
+align-items:center;
+
+justify-content:center;
+
+margin-top:35px;
+
+padding:15px 38px;
+
+border-radius:50px;
+
+text-decoration:none;
+
+font-size:16px;
+
+font-weight:600;
+
+color:white;
+
+background:linear-gradient(135deg,#6FAEFF,#4A90E2);
+
+box-shadow:0 12px 30px rgba(74,144,226,.25);
+
+transition:.35s;
+
 }
 
 .button:hover{
-    transform:translateY(-3px);
+
+transform:translateY(-4px);
+
+box-shadow:0 18px 35px rgba(74,144,226,.35);
+
+}
+
+.button span{
+
+margin-left:8px;
+
+transition:.3s;
+
+}
+
+.button:hover span{
+
+transform:translateX(6px);
+
+}
+
+.corner-gift{
+
+position:absolute;
+
+right:28px;
+
+top:28px;
+
+font-size:32px;
+
+opacity:.9;
+
+animation:gift 3s infinite;
+
+}
+
+@keyframes gift{
+
+50%{
+
+transform:rotate(-8deg) scale(1.08);
+
+}
+
+}
+
+.footer{
+
+margin-top:28px;
+
+font-size:13px;
+
+color:#7B8794;
+
+font-style:italic;
+
 }
 
 </style>
+
 </head>
 
 <body>
 
+<div class="sparkle" style="left:8%;top:12%;animation-delay:0s;"></div>
+<div class="sparkle" style="left:20%;top:82%;animation-delay:1s;"></div>
+<div class="sparkle" style="left:76%;top:20%;animation-delay:2s;"></div>
+<div class="sparkle" style="left:90%;top:70%;animation-delay:3s;"></div>
+<div class="sparkle" style="left:60%;top:8%;animation-delay:1.5s;"></div>
+
 <div class="card">
 
-<img src="IMG_20260614_105733.jpg" class="penguin">
+<div class="corner-gift">🎁</div>
 
-<h1 class="title">A Special Surprise Awaits!</h1>
+<img src="penguin.png" class="penguin">
 
-<div class="hearts">❤️❤️</div>
+<div class="small">
+HEY CUTIEE 💙
+</div>
+
+<div class="big">
+Your Moment Awaits
+</div>
+
+<p class="desc">
+A little birthday surprise is waiting for you.
+I hope it brings a smile to your face.
+Ready?
+</p>
 
 <a href="page2.html" class="button">
-    Start Surprise 🎁
+
+Tap Me For More
+
+<span>→</span>
+
 </a>
+
+<div class="footer">
+Made especially for you ✨
+</div>
 
 </div>
 
 </body>
+
 </html>
